@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  color: #f5f5f7;
+  background: radial-gradient(circle at 50% 20%, #111 0%, #000 60%);
+}
+
+/* subtle grain */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* NAV */
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  z-index: 10;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-brand img {
+  width: 26px;
+}
+
+.nav-links a {
+  margin-left: 24px;
+  color: #f5f5f7;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+/* SCROLL SNAP */
+
+.snap-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.snap {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  padding: 120px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 72px;
+  font-weight: 600;
+}
+
+.hero .sub {
+  font-size: 20px;
+  opacity: 0.7;
+}
+
+/* ghost screenshot */
+
+.ghost-shot {
+  position: absolute;
+  width: 700px;
+  opacity: 0.05;
+  bottom: -80px;
+  right: 10%;
+  pointer-events: none;
+}
+
+/* scroll cue */
+
+.scroll-cue {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-cue span {
+  width: 2px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.4);
+  animation: scrollPulse 2s infinite ease-in-out;
+}
+
+@keyframes scrollPulse {
+  0% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+}
+
+/* STATEMENT */
+
+.statement p {
+  max-width: 800px;
+  font-size: 22px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* PINNED SECTION */
+
+.pin-wrap {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.pin-image img {
+  width: 100%;
+  border-radius: 18px;
+}
+
+.pin-text {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.step {
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.step h2 {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+/* MINIMAL */
+
+.minimal p {
+  font-size: 22px;
+  opacity: 0.8;
+  margin: 14px 0;
+}
+
+/* DOWNLOAD */
+
+.download h2 {
+  font-size: 42px;
+  font-weight: 500;
+}
+
+.download-btn {
+  margin-top: 24px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  background: #0071e3;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.5;
+}
+
+/* SCREENSHOTS PAGE */
+
+.ss-wrapper {
+  padding: 140px 20px 80px;
+  text-align: center;
+}
+
+.ss-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.ss-item {
+  max-height: 260px;
+  width: 100%;
+  object-fit: contain;
+  background: #111;
+  padding: 12px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+/* fullscreen */
+
+.ss-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.ss-overlay img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .pin-wrap {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 48px;
+  }
+}

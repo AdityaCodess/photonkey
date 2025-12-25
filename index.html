@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PhotonKey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="nav">
+        <div class="nav-inner">
+            <div class="nav-brand">
+                <img src="assets/logo/logo.png" alt="">
+                <span>PhotonKey</span>
+            </div>
+            <div class="nav-links">
+                <a href="screenshots.html">Screenshots</a>
+                <a href="#download">Download</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="snap-container">
+
+        <!-- HERO -->
+        <section class="snap hero">
+            <h1>PhotonKey</h1>
+            <p class="sub">
+                Quantum Key Distribution Satellite Simulator
+            </p>
+
+            <!-- subtle visual anchor -->
+            <img src="assets/screenshots/ss1.png" class="ghost-shot" alt="">
+
+            <!-- scroll cue -->
+            <div class="scroll-cue">
+                <span></span>
+            </div>
+        </section>
+
+        <!-- STATEMENT -->
+        <section class="snap statement">
+            <p>
+                A desktop simulator for understanding how real satellite channels,
+                atmospheric effects, and pointing errors shape QKD performance.
+            </p>
+        </section>
+
+        <!-- PINNED SHOWCASE -->
+        <section class="snap pin-section">
+            <div class="pin-wrap">
+                <div class="pin-image">
+                    <img id="pinImg" src="assets/screenshots/ss1.png" alt="">
+                </div>
+
+                <div class="pin-text">
+                    <div class="step active" data-img="assets/screenshots/ss1.png">
+                        <h2>Define the optical link</h2>
+                        <p>
+                            Model ground-to-satellite and inter-satellite geometry,
+                            divergence and apertures.
+                        </p>
+                    </div>
+
+                    <div class="step" data-img="assets/screenshots/ss2.png">
+                        <h2>Apply real channel effects</h2>
+                        <p>
+                            Include atmospheric extinction, turbulence regimes and
+                            altitude-dependent loss.
+                        </p>
+                    </div>
+
+                    <div class="step" data-img="assets/screenshots/ss3.png">
+                        <h2>Observe protocol behavior</h2>
+                        <p>
+                            Analyze how BB84 and MDI-QKD respond to loss, noise
+                            and pointing instability.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MINIMAL CAPABILITIES -->
+        <section class="snap minimal">
+            <p>Ground-to-Satellite and Inter-Satellite links</p>
+            <p>Atmospheric extinction and turbulence modeling</p>
+            <p>BB84 and MDI-QKD protocol analysis</p>
+        </section>
+
+        <!-- DOWNLOAD -->
+        <section id="download" class="snap download">
+            <h2>Download PhotonKey</h2>
+            <p>Available for Windows. Runs fully offline.</p>
+
+            <a href="#" class="download-btn">Download Installer</a>
+            <span>Windows 10 / 11</span>
+        </section>
+
+    </main>
+
+    <footer>
+        PhotonKey © 2025
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
